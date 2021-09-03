@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cookandroid.ai_test">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,25 +11,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logo"
+        android:label="CLUE"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AI_test">
 
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="38c12f14941ea75224a025461fbdbb41" />
-
-        <activity android:name=".VoiceRecoActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".splash"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="" />
+        <activity android:name=".SearchMusic"/>
+        <activity android:name=".VoiceRecoActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,37 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button"
+    //ImageView(상단의 그림) -> 그림만 넣음, 다른 기능 X
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/asset__1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        //TextView에 '가사를 말해 주세요' 넣음 -> text만 출력 해 줄 뿐 다른 기능X
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:maxLines="4"
+            android:text="가사를 말해 주세요."
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            //ImageButton -> button_back은 버튼 누르면 버튼 색 바뀌도록
+            //            -> 버튼을 누른 뒤 말을 함
+            <ImageButton
+                android:id="@+id/speechbutton"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button_back"
+                android:src="@drawable/button1"
+                android:text="직접 음성 인식" />
+            <!-- <Button
+                 android:backgroundTint="@color/com_kakao_brown"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="제공된 UI 통해 음성 인식"
+                 android:layout_marginLeft="30dp"
+                 android:id="@+id/uibutton"
+                 android:layout_gravity="center"/>-->
+            <requestFocus />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!--<Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CANCLE"
+                android:id="@+id/cancelbutton" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STOP"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/stopbutton" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESTART"
+                android:layout_marginLeft="30dp"
+                android:id="@+id/restartbutton" />-->
+        </LinearLayout>
+
+        <!--        <RadioGroup
+                    android:id="@+id/service_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal" >
+
+                    //우리는 웹이나 연속어 중에서 사용하면 될 것 같음
+                    <RadioButton
+                        android:id="@+id/web"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="WEB 검색"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/dictation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="연속어 검색"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:id="@+id/local"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="지도 검색"
+                        android:layout_weight="1" />
+
+                    <RadioButton
+                        android:id="@+id/word"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="단어 검색"
+                        android:layout_weight="1" />
+                </RadioGroup>-->
+    </LinearLayout>
+    <!--<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minLines="3"
+        android:layout_marginTop="16dp"
+        android:inputType="textMultiLine"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="이전 선택 다음"
+        android:id="@+id/words_edit"
+        android:layout_weight="1" />
+-->
+    //TTS 부분이므로 나중에 디자인 적용할 때 수정
+    <!--<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="텍스트뷰"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:minLines="2"
+        android:layout_weight="1"
+        android:maxLines="1" />-->
+    <!--<Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="8dp"
-        android:text="검 색"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
-
-    <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        android:text="TextView"
-        android:textColor="@color/black"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="206dp"
-        tools:ignore="MissingConstraints"
-        />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="OPEN TTS"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ttsbutton"
+        android:layout_weight="1" />-->
+</LinearLayout>
